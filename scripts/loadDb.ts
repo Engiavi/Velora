@@ -6,7 +6,7 @@ import OpenAI from "openai"
 import "dotenv/config"
 
 import { RecursiveCharacterTextSplitter } from "langchain/text_splitter"
-
+type SimilarityMetric = "dot_product" |"cosine"| "euclidean"
 const {
     DB_NAMESPACE,
     DB_COLLECTION,
@@ -31,3 +31,13 @@ const splitter = new RecursiveCharacterTextSplitter({
     chunkSize:512,
     chunkOverlap: 100
 })
+
+const createCollection = async (SimilarityMetric:SimilarityMetric="dot_product") => {
+    const res = await db.createCollection(DB_COLLECTION,{
+        vector :{
+            dimension:1024,
+            metric:SimilarityMetric
+        }
+    })
+    console.log(res)
+}
