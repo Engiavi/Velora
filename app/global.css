@@ -1,0 +1,23 @@
+*{
+    font-family: Verdana, Tahoma, sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #3a5862;
+}
+main {
+    width: 80vw;
+    height: 80vh;
+    background-color: rgb(251, 255, 254);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+}
