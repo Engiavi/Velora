@@ -8,9 +8,20 @@ import { useChat } from "ai/react"
 
 import { Message } from "ai"
 
+import LoadingBubble  from "./components/LoadingBubble"
+import PromptSuggestionRow  from "./components/PromptSuggestionRow"
+import Bubble from "./components/Bubble"
 const Home = () => {
     const { append, isLoading, messages, input, handleInputChange, handleSubmit } = useChat()
-    const noMessage = true
+    const noMessage = false
+    const handlePrompt =(promptText)=>{
+        const msg :Message= {
+            id:crypto.randomUUID(),
+            content:promptText,
+            role: "user"
+        }
+        append(msg)
+    }
     return (
         <main>
             <Image src={logo} alt="logo" width={150} height={50} />
@@ -21,12 +32,14 @@ const Home = () => {
                             The Ultimate place for
                         </p>
                         <br />
-                        {/* <PromptSuggestionRow/> */}
+                        <PromptSuggestionRow onPromptClick={handlePrompt}/>
                     </>
                 ) : (
                     <>
-                        {/* map message */}
-                        {/* <LoadingBubble/> */}
+                      {messages.map((msg,index)=>{
+                        <Bubble key={`message-${index}`} message={msg} />
+                      })}
+                        {isLoading && <LoadingBubble/>}
                     </>
                 )}
 
