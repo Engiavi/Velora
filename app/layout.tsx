@@ -6,7 +6,7 @@ export const metadata = {
     description: "Velora is a modern chatbot",
 }
 
-const RootLayout: React.FC = ({ children }) => {
+const RootLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
     return (
         <html lang="en">
             <body>

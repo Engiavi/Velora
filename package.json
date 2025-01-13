@@ -12,6 +12,7 @@
   "dependencies": {
     "@datastax/astra-db-ts": "^1.5.0",
     "@huggingface/inference": "^2.8.1",
+    "@huggingface/transformers": "^3.2.4",
     "@langchain/community": "^0.3.24",
     "@langchain/core": "^0.3.28",
     "ai": "^4.0.33",
@@ -21,8 +22,11 @@
     "openai": "^4.78.1",
     "puppeteer": "^24.0.0",
     "puppeteer-core": "^24.0.0",
+    "puppeteer-extra": "^3.3.6",
+    "puppeteer-extra-plugin-stealth": "^2.11.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "transformers": "^3.1.0",
     "ts-node": "^10.9.2"
   },
   "devDependencies": {

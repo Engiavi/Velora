@@ -13,7 +13,7 @@ import PromptSuggestionRow  from "./components/PromptSuggestionRow"
 import Bubble from "./components/Bubble"
 const Home = () => {
     const { append, isLoading, messages, input, handleInputChange, handleSubmit } = useChat()
-    const noMessage = false
+    const noMessage = !messages || messages.length === 0
     const handlePrompt =(promptText)=>{
         const msg :Message= {
             id:crypto.randomUUID(),
